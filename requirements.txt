@@ -1,0 +1,19 @@
+# Portfolio Optimization Tooling - Python Dependencies
+
+# Data retrieval
+yfinance>=0.2.28
+
+# Data manipulation and analysis
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Visualization
+matplotlib>=3.7.0
+
+# Optimization
+scipy>=1.10.0
+
+# Notebook environment
+jupyter>=1.0.0
+notebook>=6.5.0
+ipykernel>=6.20.0
