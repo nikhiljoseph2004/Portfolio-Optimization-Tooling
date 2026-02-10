@@ -1,68 +1,55 @@
 # Portfolio Optimization Tooling
 
+A Python-based portfolio optimization toolkit that implements Modern Portfolio Theory (MPT) and efficient frontier analysis.
 
-A comprehensive Python-based portfolio optimization toolkit that implements Modern Portfolio Theory (MPT) and efficient frontier analysis to help investors construct optimal investment portfolios.
+## Table of Contents
 
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Technical Details](#technical-details)
+- [Project Structure](#project-structure)
+- [Background & Theory](#background--theory)
+- [Authors](#authors)
 
+## Overview
 
----
-
-## 📑 Table of Contents
-
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [Requirements](#-requirements)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Technical Details](#-technical-details)
-- [Project Structure](#-project-structure)
-- [Background & Theory](#-background--theory)
-- [Educational Use](#-educational-use)
-- [Disclaimers](#-important-disclaimers)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Authors](#-authors)
-- [Acknowledgments](#-acknowledgments)
-
----
-
-## 🎯 Overview
-
-This project provides a complete suite of tools for portfolio optimization, allowing users to:
-- Analyze multiple stocks using historical market data
-- Calculate risk-return profiles for individual assets
+This project provides tools for portfolio optimization, allowing users to:
+- Analyze stocks using historical market data
+- Calculate risk-return profiles
 - Generate efficient frontier visualizations
-- Optimize portfolio allocations based on risk tolerance or return targets
-- Incorporate risk-free rates for realistic portfolio analysis
+- Optimize portfolio allocations based on risk tolerance
+- Incorporate risk-free rates
 
-The tooling is based on research conducted as part of the Financial Engineering course (IEDA3330) and implements industry-standard portfolio optimization techniques.
+This project was developed as part of the Financial Engineering course (IEDA3330).
 
-## ✨ Key Features
+## Key Features
 
-### 1. **Data Retrieval & Analysis**
-- Fetch real-time and historical stock data from Yahoo Finance
+### Data Retrieval & Analysis
+- Fetch historical stock data from Yahoo Finance
 - Calculate daily returns, mean returns, standard deviations, and variances
-- Support for multiple asset classes (stocks, ETFs, indices)
+- Support for stocks, ETFs, and indices
 
-### 2. **Portfolio Optimization Algorithms**
-- **Efficient Frontier Generation**: Simulate thousands of random portfolios to visualize the risk-return tradeoff
-- **Maximum Return Optimization**: Find optimal weights for maximum return given a target risk level
-- **Minimum Risk Optimization**: Find optimal weights for minimum risk given a target return level
-- **Sharpe Ratio Analysis**: Identify portfolios with the best risk-adjusted returns
+### Portfolio Optimization
+- Efficient frontier generation using Monte Carlo simulation
+- Maximum return optimization for a given risk level
+- Minimum risk optimization for a given return level
+- Sharpe ratio analysis
 
-### 3. **Risk Management**
-- Integration of risk-free rate (Treasury Bill rates) for realistic benchmarking
-- Annualized risk and return calculations (252 trading days)
-- Portfolio variance and covariance matrix analysis
+### Risk Management
+- Risk-free rate integration (Treasury Bill rates)
+- Annualized risk and return calculations
+- Covariance matrix analysis
 
-### 4. **Visualization**
-- Interactive efficient frontier plots with color-coded Sharpe ratios
-- Clear visualization of risk-return tradeoffs
-- Portfolio weight distribution analysis
+### Visualization
+- Efficient frontier plots with Sharpe ratios
+- Risk-return tradeoff visualization
 
-## 📋 Requirements
+## Requirements
 
-### Python Dependencies
+Python 3.8 or higher and the following packages:
 ```
 yfinance>=0.2.28
 pandas>=2.0.0
@@ -72,65 +59,59 @@ scipy>=1.10.0
 jupyter>=1.0.0
 ```
 
-### Python Version
-- Python 3.8 or higher
+## Installation
 
-## 🚀 Installation
-
-1. **Clone the repository**
+1. Clone the repository:
    ```bash
    git clone https://github.com/nikhiljoseph2004/Portfolio-Optimization-Tooling.git
    cd Portfolio-Optimization-Tooling
    ```
 
-2. **Install dependencies**
+2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Launch Jupyter Notebook**
+3. Launch Jupyter Notebook:
    ```bash
-   jupyter notebook testing.ipynb
+   jupyter notebook main.ipynb
    ```
 
-## 📖 Usage
+## Usage
 
-### Quick Start Example
+### Quick Start
 
-The notebook `testing.ipynb` provides an interactive interface for portfolio optimization. Here's a complete workflow:
+The notebook `main.ipynb` provides an interactive interface for portfolio optimization.
 
-#### Step-by-Step Guide
+#### Steps
 
-1. **Launch the notebook**:
+1. Launch the notebook:
    ```bash
-   jupyter notebook testing.ipynb
+   jupyter notebook main.ipynb
    ```
 
-2. **Run the setup cells** (Cells 1-3):
+2. Run the setup cells:
    - Cell 1: Import libraries
    - Cell 2: Load function definitions
    - Cell 3: Set date range and fetch risk-free rate
 
-3. **Enter your stock tickers** (Cell 5):
-   When prompted, enter comma-separated ticker symbols:
+3. Enter stock tickers when prompted:
    ```
    Enter stock tickers, separated by commas: AAPL, MSFT, GOOGL, AMZN
    ```
 
-4. **View the efficient frontier**:
-   The tool will automatically:
-   - Fetch historical data from Yahoo Finance
-   - Calculate daily returns and statistics
-   - Generate 10,000 random portfolios
-   - Display an interactive plot showing risk vs. return
+4. View the efficient frontier:
+   - Fetches historical data from Yahoo Finance
+   - Calculates returns and statistics
+   - Generates 10,000 random portfolios
+   - Displays a plot showing risk vs. return
 
-5. **Optimize your portfolio** (Cell 6):
-   Enter your target risk level:
+5. Optimize your portfolio by entering a target risk level:
    ```
    Enter your desired portfolio risk (standard deviation): 0.25
    ```
    
-   The tool will output optimal weights:
+   Output example:
    ```
    Optimal Portfolio Weights:
    AAPL: 25.3%
@@ -144,70 +125,64 @@ The notebook `testing.ipynb` provides an interactive interface for portfolio opt
 
 ### Sample Stock Combinations
 
-Try these tested combinations for different investment strategies:
+Example combinations for different strategies:
 
-#### **Conservative Portfolio** (Low Risk - 12-15% volatility)
+#### Conservative (Low Risk)
 ```
 JNJ, PG, KO, WMT, DUK, VZ
 ```
-Focus: Dividend aristocrats and defensive stocks
 
-#### **Balanced Portfolio** (Moderate Risk - 15-20% volatility)
+#### Balanced (Moderate Risk)
 ```
 DUK, XOM, CVX, PG, KO, BABA, SPY, VTI
 ```
-Focus: Diversified across sectors and geographies
 
-#### **Growth Portfolio** (High Risk - 25-35% volatility)
+#### Growth (High Risk)
 ```
 AAPL, MSFT, NVDA, GOOGL, AMZN, TSLA, META
 ```
-Focus: Technology and high-growth companies
 
-#### **Diversified Portfolio** (Comprehensive - 19 assets)
+#### Diversified
 ```
 AAPL, MSFT, NVDA, JNJ, PFE, AMZN, TSLA, JPM, BAC, NEE, DUK, XOM, CVX, PG, KO, BABA, SPY, VTI, EEM
 ```
-Focus: Maximum diversification across all sectors
 
-### Understanding the Outputs
+### Output Descriptions
 
-#### 1. **Daily Statistics Table**
-Shows for each asset:
-- Mean Return (average daily return)
-- Standard Deviation (volatility)
-- Variance (squared volatility)
+#### Daily Statistics Table
+- Mean Return: average daily return
+- Standard Deviation: volatility
+- Variance: squared volatility
 
-#### 2. **Efficient Frontier Plot**
-- **X-axis**: Portfolio Risk (Standard Deviation)
-- **Y-axis**: Portfolio Return
-- **Color**: Sharpe Ratio (higher is better)
-- Each point represents a possible portfolio allocation
+#### Efficient Frontier Plot
+- X-axis: Portfolio risk (standard deviation)
+- Y-axis: Portfolio return
+- Color: Sharpe ratio (higher is better)
 
-#### 3. **Optimized Portfolio Weights**
-Shows the percentage allocation to each stock that achieves your optimization goal.
+#### Optimized Portfolio Weights
+Percentage allocation to each stock for the target risk/return.
 
-## 🔬 Technical Details
+## Technical Details
 
 ### Optimization Algorithms
 
-#### 1. Efficient Frontier Calculation
-Uses Monte Carlo simulation to generate random portfolio combinations:
+#### Efficient Frontier Calculation
+Monte Carlo simulation:
 - Generates 10,000 random weight combinations
-- Ensures weights sum to 1 (fully invested)
+- Weights sum to 1
 - Calculates annualized returns and risks
-- Computes Sharpe ratios for each portfolio
+- Computes Sharpe ratios
 
-#### 2. Constrained Optimization
-Uses `scipy.optimize.minimize` with constraints:
-- **Sum-to-one constraint**: All weights must sum to 1
-- **Non-negativity constraint**: No short selling (weights ≥ 0)
-- **Target constraints**: Risk or return targets as specified
+#### Constrained Optimization
+Uses `scipy.optimize.minimize`:
+- Weights sum to 1
+- No short selling (weights ≥ 0)
+- Target risk or return constraints
 
-#### 3. Risk-Return Calculations
-- **Portfolio Return**: `R_p = Σ(w_i × r_i)` annualized × 252
-- **Portfolio Risk**: `σ_p = √(w^T × Σ × w)` annualized × √252
-- **Sharpe Ratio**: `(R_p - R_f) / σ_p`
+#### Calculations
+- Portfolio Return: `R_p = Σ(w_i × r_i) × 252`
+- Portfolio Risk: `σ_p = √(w^T × Σ × w) × √252`
+- Sharpe Ratio: `(R_p - R_f) / σ_p`
 
 Where:
 - `w_i` = weight of asset i
@@ -215,35 +190,35 @@ Where:
 - `Σ` = covariance matrix
 - `R_f` = risk-free rate
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Portfolio-Optimization-Tooling/
 │
-├── testing.ipynb                          # Main interactive notebook
-├── Financial Engineering_IEDA3330         # Research paper and methodology
+├── main.ipynb                             # Main notebook
+├── Financial Engineering_IEDA3330         # Course report
 │   Final Report_compressed.pdf
 ├── README.md                              # This file
-└── requirements.txt                       # Python dependencies
+├── requirements.txt                       # Dependencies
+├── docs/                                  # Documentation
+│   ├── USAGE.md
+│   ├── ALGORITHMS.md
+│   └── EXAMPLES.md
+└── examples/
+    └── README.md
 ```
 
-## 📚 Background & Theory
+## Background & Theory
 
-This project implements **Modern Portfolio Theory (MPT)**, developed by Harry Markowitz, which earned him the Nobel Prize in Economics. Key concepts:
+This project implements Modern Portfolio Theory (MPT) developed by Harry Markowitz:
 
-- **Diversification**: Combining assets reduces overall portfolio risk
-- **Efficient Frontier**: The set of optimal portfolios offering the highest expected return for a given level of risk
-- **Sharpe Ratio**: Measures risk-adjusted returns (return per unit of risk)
-- **Mean-Variance Optimization**: Balancing expected returns against risk
+- **Diversification**: Combining assets reduces portfolio risk
+- **Efficient Frontier**: Set of optimal portfolios with highest return for a given risk
+- **Sharpe Ratio**: Risk-adjusted return measure
+- **Mean-Variance Optimization**: Balancing returns against risk
 
-For detailed theoretical background and implementation details, please refer to the included research paper: `Financial Engineering_IEDA3330 Final Report_compressed.pdf`
+See `Financial Engineering_IEDA3330 Final Report_compressed.pdf` for details.
 
+## Authors
 
-## 👥 Authors
-
-- **Nikhil Joseph** - [nikhiljoseph2004](https://github.com/nikhiljoseph2004)
-
-
----
-
-**Happy Investing! 📈**
+Nikhil Joseph - [nikhiljoseph2004](https://github.com/nikhiljoseph2004)
