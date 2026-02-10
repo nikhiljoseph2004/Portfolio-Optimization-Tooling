@@ -1,14 +1,9 @@
 # Portfolio Optimization Tooling
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 A comprehensive Python-based portfolio optimization toolkit that implements Modern Portfolio Theory (MPT) and efficient frontier analysis to help investors construct optimal investment portfolios.
 
-![Portfolio Optimization](https://img.shields.io/badge/Portfolio-Optimization-success)
-![Modern Portfolio Theory](https://img.shields.io/badge/MPT-Markowitz-blue)
+
 
 ---
 
