@@ -1,6 +1,35 @@
 # Portfolio Optimization Tooling
 
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
 A comprehensive Python-based portfolio optimization toolkit that implements Modern Portfolio Theory (MPT) and efficient frontier analysis to help investors construct optimal investment portfolios.
+
+![Portfolio Optimization](https://img.shields.io/badge/Portfolio-Optimization-success)
+![Modern Portfolio Theory](https://img.shields.io/badge/MPT-Markowitz-blue)
+
+---
+
+## 📑 Table of Contents
+
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [Requirements](#-requirements)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Technical Details](#-technical-details)
+- [Project Structure](#-project-structure)
+- [Background & Theory](#-background--theory)
+- [Educational Use](#-educational-use)
+- [Disclaimers](#-important-disclaimers)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Authors](#-authors)
+- [Acknowledgments](#-acknowledgments)
+
+---
 
 ## 🎯 Overview
 
@@ -73,41 +102,78 @@ jupyter>=1.0.0
 
 ### Quick Start Example
 
-The notebook `testing.ipynb` provides an interactive interface for portfolio optimization:
+The notebook `testing.ipynb` provides an interactive interface for portfolio optimization. Here's a complete workflow:
 
-1. **Import the stock tickers you want to analyze**:
-   ```python
-   # Example portfolio
-   tickers = ['AAPL', 'MSFT', 'NVDA', 'JNJ', 'PFE', 'AMZN', 'TSLA', 'JPM']
+#### Step-by-Step Guide
+
+1. **Launch the notebook**:
+   ```bash
+   jupyter notebook testing.ipynb
    ```
 
-2. **Set your analysis date range**:
-   ```python
-   date1 = '2021-01-06'
-   date2 = '2022-01-09'
+2. **Run the setup cells** (Cells 1-3):
+   - Cell 1: Import libraries
+   - Cell 2: Load function definitions
+   - Cell 3: Set date range and fetch risk-free rate
+
+3. **Enter your stock tickers** (Cell 5):
+   When prompted, enter comma-separated ticker symbols:
+   ```
+   Enter stock tickers, separated by commas: AAPL, MSFT, GOOGL, AMZN
    ```
 
-3. **Run the optimization**:
-   The notebook will:
-   - Fetch historical price data
-   - Calculate returns and statistics
-   - Generate the efficient frontier
-   - Prompt for your risk tolerance
-   - Return optimal portfolio weights
+4. **View the efficient frontier**:
+   The tool will automatically:
+   - Fetch historical data from Yahoo Finance
+   - Calculate daily returns and statistics
+   - Generate 10,000 random portfolios
+   - Display an interactive plot showing risk vs. return
+
+5. **Optimize your portfolio** (Cell 6):
+   Enter your target risk level:
+   ```
+   Enter your desired portfolio risk (standard deviation): 0.25
+   ```
+   
+   The tool will output optimal weights:
+   ```
+   Optimal Portfolio Weights:
+   AAPL: 25.3%
+   MSFT: 30.1%
+   GOOGL: 22.4%
+   AMZN: 22.2%
+   
+   Portfolio Return: 28.5% (annualized)
+   Portfolio Risk: 25.0% (annualized)
+   ```
 
 ### Sample Stock Combinations
 
-The project includes tested combinations that produce interesting efficient frontiers:
+Try these tested combinations for different investment strategies:
 
-**Diversified Portfolio** (19 assets):
+#### **Conservative Portfolio** (Low Risk - 12-15% volatility)
 ```
-aapl, msft, nvda, jnj, pfe, amzn, tsla, jpm, bac, nee, duk, xom, cvx, pg, ko, baba, spy, vti, eem
+JNJ, PG, KO, WMT, DUK, VZ
 ```
+Focus: Dividend aristocrats and defensive stocks
 
-**Focused Portfolio** (8 assets - recommended for cleaner visualizations):
+#### **Balanced Portfolio** (Moderate Risk - 15-20% volatility)
 ```
 duk, xom, cvx, pg, ko, baba, spy, vti
 ```
+Focus: Diversified across sectors and geographies
+
+#### **Growth Portfolio** (High Risk - 25-35% volatility)
+```
+AAPL, MSFT, NVDA, GOOGL, AMZN, TSLA, META
+```
+Focus: Technology and high-growth companies
+
+#### **Diversified Portfolio** (Comprehensive - 19 assets)
+```
+aapl, msft, nvda, jnj, pfe, amzn, tsla, jpm, bac, nee, duk, xom, cvx, pg, ko, baba, spy, vti, eem
+```
+Focus: Maximum diversification across all sectors
 
 ### Understanding the Outputs
 
