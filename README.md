@@ -238,44 +238,11 @@ This project implements **Modern Portfolio Theory (MPT)**, developed by Harry Ma
 
 For detailed theoretical background and implementation details, please refer to the included research paper: `Financial Engineering_IEDA3330 Final Report_compressed.pdf`
 
-## 🎓 Educational Use
-
-This toolkit is designed for:
-- **Students** learning portfolio theory and quantitative finance
-- **Researchers** exploring portfolio optimization techniques
-- **Individual investors** seeking to understand portfolio construction
-- **Finance professionals** prototyping investment strategies
-
-## ⚠️ Important Disclaimers
-
-1. **Not Financial Advice**: This tool is for educational and research purposes only. It does not constitute financial advice.
-2. **Past Performance**: Historical returns do not guarantee future results.
-3. **Model Limitations**: The tool assumes normally distributed returns and uses historical data, which may not reflect future market conditions.
-4. **Transaction Costs**: The model does not account for trading fees, taxes, or market impact.
-5. **Market Risk**: All investments carry risk. Diversification does not eliminate the risk of investment losses.
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
-
-## 📄 License
-
-This project is available for educational and research purposes. Please see the LICENSE file for details.
 
 ## 👥 Authors
 
 - **Nikhil Joseph** - [nikhiljoseph2004](https://github.com/nikhiljoseph2004)
 
-## 🙏 Acknowledgments
-
-- Course: Financial Engineering (IEDA3330)
-- Built with [yfinance](https://github.com/ranaroussi/yfinance) for market data
-- Optimization powered by [SciPy](https://scipy.org/)
-- Data analysis with [pandas](https://pandas.pydata.org/) and [NumPy](https://numpy.org/)
-
-## 📞 Contact
-
-For questions or feedback, please open an issue on GitHub or contact through the repository.
 
 ---
 
