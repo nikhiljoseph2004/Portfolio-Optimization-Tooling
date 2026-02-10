@@ -159,7 +159,7 @@ Focus: Dividend aristocrats and defensive stocks
 
 #### **Balanced Portfolio** (Moderate Risk - 15-20% volatility)
 ```
-duk, xom, cvx, pg, ko, baba, spy, vti
+DUK, XOM, CVX, PG, KO, BABA, SPY, VTI
 ```
 Focus: Diversified across sectors and geographies
 
@@ -171,7 +171,7 @@ Focus: Technology and high-growth companies
 
 #### **Diversified Portfolio** (Comprehensive - 19 assets)
 ```
-aapl, msft, nvda, jnj, pfe, amzn, tsla, jpm, bac, nee, duk, xom, cvx, pg, ko, baba, spy, vti, eem
+AAPL, MSFT, NVDA, JNJ, PFE, AMZN, TSLA, JPM, BAC, NEE, DUK, XOM, CVX, PG, KO, BABA, SPY, VTI, EEM
 ```
 Focus: Maximum diversification across all sectors
 
